@@ -1,0 +1,59 @@
+﻿@page
+@model MyToDoList.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+    <div class="app">
+        <header class="app-header">
+            <div class="app-header-logo">
+               <h2>Register</h2> 
+            </div>
+        </header>
+
+            <div class="app-body-main-content"
+          
+                <div class="card" id="newFrom">
+                    <section>
+                        <form method="post">
+                            <div class="row" style="margin:0px">
+                                <div class="col-sm" style="display:inline-grid;padding:10px">
+                                    <label asp-for="@Model.AddTask.Name"></label>
+                                    <input style="min-height:30px; min-width:300px;border-radius:5px;font-size:1rem" asp-for="@Model.AddTask.Name" />
+                                    @Html.ValidationMessageFor(m => m.AddTask.Name)
+                                </div>
+                                <div class="col-sm" style="display: inline-grid; padding: 10px">
+                                    <label asp-for="@Model.AddTask.DoB"></label>
+                                    <input style="min-height: 30px; min-width: 300px; border-radius: 5px; font-size: 1rem" type="date" asp-for="@Model.AddTask.Address" />
+                                    @Html.ValidationMessageFor(m => m.AddTask.DoB)
+                                </div>
+                            </div>
+                            <div style="display: inline-grid; padding: 10px; width:100%">
+                                <label asp-for="@Model.AddTask.Address"></label>
+                                <textarea style="min-height: 105px; min-width: 625px; border-radius: 5px; font-size: 1rem" type="text" asp-for="@Model.AddTask.DoB"></textarea>
+                                @Html.ValidationMessageFor(m => m.AddTask.Address)
+                            </div>
+                            <div style="display: inline-grid; padding: 10px; width:100%">
+                                <label asp-for="@Model.AddTask.CardNumber"></label>
+                                <input style="min-height:30px; min-width:200px;border-radius:5px;font-size:1rem" type="text" asp-for="@Model.AddTask.CardNumber"></input>
+                                @Html.ValidationMessageFor(m => m.AddTask.CardNumber)
+                            </div>
+
+                            <div style="display:block">
+                                <input style="background-color: black;margin-left:9px; float:right; font-size: .9rem" value="Cancel" asp-page-handler="Cancel" onclick="CloseForm();" type="submit" class="save-button">
+                                <input style="position: relative; left: 77%; background-color: black; font-size: .9rem" type="submit" value="Add" class="save-button" />
+
+                            </div>
+                        </form>
+                    </section>
+                    
+
+                </div>
+
+            </div>
+
+        
+    </div>
+
+
